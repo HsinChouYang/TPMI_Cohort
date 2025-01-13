@@ -1,9 +1,9 @@
 # Tools
 
-* PLINK
-* PLINK2
-* KING
-* ADMIXTURE
+* [PLINK](https://www.cog-genomics.org/plink/)
+* [PLINK2](https://www.cog-genomics.org/plink/2.0/)
+* [KING](https://www.kingrelatedness.com/)
+* [ADMIXTURE](https://dalexander.github.io/admixture/)
 
 # Packages
 ## Python
