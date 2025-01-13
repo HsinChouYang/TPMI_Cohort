@@ -16,7 +16,7 @@
 * test2
 
 # Download data
-1. 1000 Genomes Project data
+1. [1000 Genomes phase 3](https://www.cog-genomics.org/plink/2.0/resources#phase3_1kg)
 
 # Required files & format
 1. batchID.clst
