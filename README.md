@@ -72,7 +72,7 @@ In this step, we use individuals born before 1950 (listed in G50.IDs) to perform
 --out G50
 ```
 
--step3 : PCA projection  
+- step3 : PCA projection  
 In this step, we use the allele frequencies and principal component eigenvectors computed in the previous step to project all individuals onto the PCA coordinates.
 ```
 ./plink2 --bfile tpmi \
