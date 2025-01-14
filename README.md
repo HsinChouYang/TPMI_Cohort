@@ -51,9 +51,9 @@ rs4444	batch6
 - Vital signs
 
 # Population structure
-## PCA
+## Principal Component Analysis(PCA)
 - step1 : SNP pruning  
-In this step, we aim to generate a pruned subset of variants for Principal Component Analysis (PCA). The command excludes the long-range linkage disequilibrium (LRLD) regions specified in LRLD.txt and performs an independent pairwise pruning with a window size of 5000kb, step size of 1, and a linkage disequilibrium (LD) threshold of 0.2.
+In this step, we aim to generate a pruned subset of variants for PCA. The command excludes the long-range linkage disequilibrium (LRLD) regions specified in LRLD.txt and performs an independent pairwise pruning with a window size of 5000kb, step size of 1, and a linkage disequilibrium (LD) threshold of 0.2.
 
 ```
 ./plink2 --bfile tpmi \
