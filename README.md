@@ -53,6 +53,10 @@ rs4444	batch6
 # Population structure
 ## PCA
 - SNP pruning
+This command performs SNP pruning to obtain a set of independent SNPs by:
+1. Removing SNPs in regions of known long-range linkage disequilibrium (LD)
+2. Performing LD-based pruning using a sliding window approach
+
 ```
 ./plink2 --bfile infile \
 --exclude range LRLD.txt \
