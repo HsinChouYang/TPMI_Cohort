@@ -84,8 +84,16 @@ In this step, we use the allele frequencies and principal component eigenvectors
 
 2. Admixture
 - Baseline Samples
+
 - Run Admixture
+```
+./RunAdmixture.sh
+```
+
 - Projection
+```
+./admixture -P ForProjection.bed 10 -j10
+```
 
 # Application
 1. GWAS
