@@ -52,10 +52,8 @@ rs4444	batch6
 
 # Population structure
 ## PCA
-- step1 : SNP pruning
-This command performs SNP pruning to obtain a set of independent SNPs by:
-1. Removing SNPs in regions of known long-range linkage disequilibrium (LD)
-2. Performing LD-based pruning using a sliding window approach
+- step1 : SNP pruning  
+In this step, we aim to generate a pruned subset of variants for Principal Component Analysis (PCA). The command excludes the long-range linkage disequilibrium (LRLD) regions specified in LRLD.txt and performs an independent pairwise pruning with a window size of 5000kb, step size of 1, and a linkage disequilibrium (LD) threshold of 0.2.
 
 ```
 ./plink2 --bfile tpmi \
@@ -63,7 +61,7 @@ This command performs SNP pruning to obtain a set of independent SNPs by:
 --indep-pairwise 5000kb 1 0.2 \
 --out tpmi_forPCA
 ```
-- step2 : PCA of Birth Cohorts Before 1950.
+- step2 : PCA of Birth Cohorts Before 1950  
 In this step, we use individuals born before 1950 (listed in G50.IDs) to perform Principal Component Analysis (PCA). The command extracts a pruned subset of variants from the file tpmi_forPCA.prune.in, keeps only the individuals listed in G50.IDs, and calculates allele frequencies with the --freq counts option. The PCA is then performed using the approximate method with biallelic variant weights, and the results are saved to the output file G50.
 ```
 ./plink2 --bfile tpmi \
@@ -74,7 +72,7 @@ In this step, we use individuals born before 1950 (listed in G50.IDs) to perform
 --out G50
 ```
 
--step3 : PCA projection
+-step3 : PCA projection  
 In this step, we use the allele frequencies and principal component eigenvectors computed in the previous step to project all individuals onto the PCA coordinates.
 ```
 ./plink2 --bfile tpmi \
