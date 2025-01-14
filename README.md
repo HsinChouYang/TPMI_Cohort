@@ -51,8 +51,8 @@ rs4444	batch6
 - Vital signs
 
 # Population structure
-1. PCA
-- SNP pruning
+## PCA
+### SNP pruning
 - PCA of Birth Cohorts Before 1950
 - PCA projection
 2. Admixture
