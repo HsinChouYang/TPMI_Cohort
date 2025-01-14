@@ -53,12 +53,12 @@ rs4444	batch6
 # Population structure
 ## PCA
 - SNP pruning
-'''
+```
 ./plink2 --bfile infile \
 --exclude range LRLD.txt \
 --indep-pairwise 5000kb 1 0.2 \
 --out outfile
-'''
+```
 - PCA of Birth Cohorts Before 1950
 - PCA projection
 2. Admixture
