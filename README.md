@@ -52,19 +52,38 @@ rs4444	batch6
 
 # Population structure
 ## PCA
-- SNP pruning
+- step1 : SNP pruning
 This command performs SNP pruning to obtain a set of independent SNPs by:
 1. Removing SNPs in regions of known long-range linkage disequilibrium (LD)
 2. Performing LD-based pruning using a sliding window approach
 
 ```
-./plink2 --bfile infile \
+./plink2 --bfile tpmi \
 --exclude range LRLD.txt \
 --indep-pairwise 5000kb 1 0.2 \
---out outfile
+--out tpmi_forPCA
 ```
-- PCA of Birth Cohorts Before 1950
-- PCA projection
+- step2 : PCA of Birth Cohorts Before 1950.
+In this step, we use individuals born before 1950 (listed in G50.IDs) to perform Principal Component Analysis (PCA). The command extracts a pruned subset of variants from the file tpmi_forPCA.prune.in, keeps only the individuals listed in G50.IDs, and calculates allele frequencies with the --freq counts option. The PCA is then performed using the approximate method with biallelic variant weights, and the results are saved to the output file G50.
+```
+./plink2 --bfile tpmi \
+--extract tpmi_forPCA.prune.in \
+--keep G50.IDs \
+--freq counts \
+--pca approx biallelic-var-wts \
+--out G50
+```
+
+-step3 : PCA projection
+In this step, we use the allele frequencies and principal component eigenvectors computed in the previous step to project all individuals onto the PCA coordinates.
+```
+./plink2 --bfile tpmi \
+--read-freq G50.acount \
+--score G50.eigenvec.var 2 3 header-read no-mean-imputation variance-standardize \
+--score-col-nums 5-14 \
+--out PCA_projection
+```
+
 2. Admixture
 - Baseline Samples
 - Run Admixture
