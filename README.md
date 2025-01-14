@@ -62,7 +62,7 @@ In this step, we aim to generate a pruned subset of variants for PCA. The comman
 --out tpmi_forPCA
 ```
 - step2 : PCA of Birth Cohorts Before 1950  
-In this step, we use individuals born before 1950 (listed in G50.IDs) to perform Principal Component Analysis (PCA). The command extracts a pruned subset of variants from the file tpmi_forPCA.prune.in, keeps only the individuals listed in G50.IDs, and calculates allele frequencies with the --freq counts option. The PCA is then performed using the approximate method with biallelic variant weights, and the results are saved to the output file G50.
+In this step, we use individuals born before 1950 (listed in G50.IDs) to perform PCA. The command extracts a pruned subset of variants from the file tpmi_forPCA.prune.in, keeps only the individuals listed in G50.IDs, and calculates allele frequencies with the --freq counts option. The PCA is then performed using the approximate method with biallelic variant weights, and the results are saved to the output file G50.
 ```
 ./plink2 --bfile tpmi \
 --extract tpmi_forPCA.prune.in \
