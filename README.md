@@ -89,7 +89,7 @@ In this step, we use the allele frequencies and principal component eigenvectors
 --out PCA_projection
 ```
 
-2. Admixture
+## Admixture
 - Baseline Samples
 
 - Run Admixture
