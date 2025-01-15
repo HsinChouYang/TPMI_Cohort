@@ -45,6 +45,13 @@ rs4444	batch6
 - Batch effect detection
 - Batch SNP removal
 - Relatedness check
+```
+./king -b ForKing.bed \
+--cpus 50 \
+--related \
+--degree 3 \
+--prefix TPMI_Relatedness
+```
 2. EMR Data
 - Diagnosis reports
 - Laboratory test results
