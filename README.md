@@ -98,7 +98,7 @@ In this step, we use the allele frequencies and principal component eigenvectors
 # Application
 1. GWAS
 - QC
-- ASSOC
+- Associaton
 2. post-GWAS
 - Ploygenetic risk score
 
