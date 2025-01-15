@@ -45,8 +45,8 @@ rs4444	batch6
 - Batch effect detection
 - Batch SNP removal
 - Relatedness check
-2. EHR Data
-- Diagnosis data
+2. EMR Data
+- Diagnosis reports
 - Laboratory test results
 - Vital signs
 
