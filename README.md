@@ -45,8 +45,15 @@ rs4444	batch6
 - Batch effect detection
 - Batch SNP removal
 - Relatedness check
-2. EHR Data
-- Diagnosis data
+```
+./king -b ForKing.bed \
+--cpus 50 \
+--related \
+--degree 3 \
+--prefix TPMI_Relatedness
+```
+2. EMR Data
+- Diagnosis reports
 - Laboratory test results
 - Vital signs
 
@@ -82,7 +89,7 @@ In this step, we use the allele frequencies and principal component eigenvectors
 --out PCA_projection
 ```
 
-2. Admixture
+## Admixture
 - Baseline Samples
 
 - Run Admixture
@@ -96,6 +103,9 @@ In this step, we use the allele frequencies and principal component eigenvectors
 ```
 
 # Application
-1. GWAS
-2. Ploygenetic risk score
+## GWAS
+- QC
+- Associaton
+## post-GWAS
+- Ploygenetic risk score
 
