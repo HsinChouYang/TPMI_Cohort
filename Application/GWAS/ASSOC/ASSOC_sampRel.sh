@@ -1,9 +1,9 @@
 
 #!/bin/bash
 
-fpath_geno=$1 # *_qcSampRel
-fpath_phecov=$2 # tpmi037_pcJH.fpath_phecov
-phe=$3 # e11, colname in $2
+fpath_geno=$1 # related QC sample dataset, e.g., *_qcSampRel
+fpath_phecov=$2 # phenotype + covariate file, phecov.txt
+phe=$3 # colname in $2, e.g., e11
 ttype=$4 # b (binary) or q (quantitative)
 
 # create bgen files for the step 2 in SAIGE

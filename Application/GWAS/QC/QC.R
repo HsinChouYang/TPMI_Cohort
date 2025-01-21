@@ -27,23 +27,21 @@ for(a in gsub("--(.*?)=.*","\\1",names(args))){
 }
 
 pkgs <- .packages(all.available=TRUE)
-if(all(pkgs!="data.table")) install.packages("data.table",repos="https://cloud.r-project.org/")
-if(all(pkgs!="car")) install.packages("car",repos="https://cloud.r-project.org/")
-if(all(pkgs!="sp")) install.packages("sp",repos="https://cloud.r-project.org/")
-if(all(pkgs!="RColorBrewer")) install.packages("RColorBrewer",repos="https://cloud.r-project.org/")
-
+for(pkg in c("data.table","car","sp","RColorBrewer"))
+ if(all(pkgs!=pkg)) install.packages(pkg,repos="https://cloud.r-project.org/")
+ 
 library(data.table)
-library(car)
-library(sp)
+library(car) # dataEllipse
+library(sp) # point.in.polygon
 library(RColorBrewer)
 
 wd <- getwd()
 
 f.sex <- dir(wd,pattern="\\.sexcheck",full.name=T)
-#f.imiss <- dir(wd,pattern="\\.imiss",full.name=T)
-f.smiss <- dir(wd,pattern="\\.smiss",full.name=T)
+#f.imiss <- dir(wd,pattern="\\.imiss",full.name=T) # plink1.9
+f.smiss <- dir(wd,pattern="\\.smiss",full.name=T) # plink2
 f.het <- dir(wd,pattern="\\.het",full.name=T)
-f.genome <- dir(wd,pattern="\\.genome",full.name=T)
+#f.genome <- dir(wd,pattern="\\.genome",full.name=T)
 f.eigen1 <- dir(wd,pattern="\\.eigenval",full.name=T)
 f.eigen2 <- dir(wd,pattern="\\.eigenvec",full.name=T)
 
@@ -116,7 +114,8 @@ if(check==4){
   # pc scores
    var <- scan(f.eigen1) 
    pc <- fread(f.eigen2,header=F)
-   popu <- fread(f.ancestry) # IID, population
+   popu <- fread(f.ancestry) # IID, Population
+    setnames(popu,"#IID","IID")
 
 ## 1000 genomes
    col.popu <- setNames(c(brewer.pal(9,"Oranges")[-(1:2)],brewer.pal(9,"Purples")[c(3,5,7,9)],brewer.pal(9,"Blues")[c(3,4,5,7,9)],brewer.pal(9,"Greens")[c(3,4,5,7,9)],brewer.pal(9,"Greys")[c(3,4,5,7,9)]),
@@ -124,7 +123,7 @@ if(check==4){
    col.popu.mat <- cbind(col.popu[1:7],c(col.popu[8:11],rep(NA,3)),c(col.popu[12:16],rep(NA,2)),c(col.popu[17:21],"red",rep(NA,1)),c(col.popu[22:26],rep(NA,2)))
    col.name.mat <- names(col.popu)[c(1:7,8:11,rep(27,3),12:16,rep(27,2),17:21,rep(27,2),22:26,rep(27,2))]; col.name.mat[27] <- data_name; col.name.mat <- matrix(col.name.mat,7)
 
-   col <- col.popu[toupper(popu[match(pc[,V2],popu[,IID]),population])]
+   col <- col.popu[toupper(popu[match(pc[,V2],popu[,IID]),Population])]
     col[is.na(col)] <- "red"
 
   pdf("divAncestry_check.pdf")

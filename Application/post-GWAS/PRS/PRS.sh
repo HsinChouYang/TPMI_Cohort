@@ -13,10 +13,10 @@ python3 PRScsx.py --ref_dir=LD_ref \
 
 cat e11/t2d_prscsx_META_*.txt > e11/t2d_prscsx_META.txt 
 
-plink2 --bfile tpmi --score e11/t2d_prscsx_META.txt 2 4 6 --out e11_DIAGRAM_prscsx
+plink2 --bfile tpmi --score e11/t2d_prscsx_META.txt 2 4 6 cols=fid,nallele,scoresums,scoreavgs --out e11_DIAGRAM_prscsx
 
 ## Externally sourced variant weights
-# PGS Catalog: PGS002308
-plink2 --bfile tpmi --score PGS002308_hmPOS_GRCh38.txt 1 4 6 --out e11_PGS002308_prscsx
+# PGS Catalog: PGS002308 (https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002308/ScoringFiles/Harmonized/PGS002308_hmPOS_GRCh38.txt.gz)
+plink2 --bfile tpmi --score PGS002308_hmPOS_GRCh38.txt 1 4 6 cols=fid,nallele,scoresums,scoreavgs --out e11_PGS002308_prscsx
 
-## note: if possible, try to use chr_pos to represent for the variant ids when using PLINK to calculate scores;
+## note: if possible, try to use chr_pos to represent for the variant ids when using PLINK to calculate scores
