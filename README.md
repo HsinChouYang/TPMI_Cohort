@@ -4,6 +4,8 @@
 * [PLINK2](https://www.cog-genomics.org/plink/2.0/)
 * [KING](https://www.kingrelatedness.com/)
 * [ADMIXTURE](https://dalexander.github.io/admixture/)
+* [SAIGE](https://github.com/saigegit/SAIGE)
+* [PRS-CSx](https://github.com/getian107/PRScsx)
 
 # Packages
 ## Python
@@ -24,6 +26,7 @@
 
 # Download data
 1. [1000 Genomes phase 3](https://www.cog-genomics.org/plink/2.0/resources#phase3_1kg)
+2. [PGS Catalog](https://www.pgscatalog.org/downloads/)
 
 # Required files & format
 1. batchID.clst
@@ -111,5 +114,5 @@ To select samples for Admixture analysis, the PC1 values on the X-axis and PC2 v
 - QC
 - Associaton
 ## post-GWAS
-- Ploygenetic risk score
+- Polygenic risk score
 
