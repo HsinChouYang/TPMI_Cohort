@@ -7,9 +7,12 @@
 
 # Packages
 ## Python
+* os
 * pandas
 * matplotlib
 * numpy
+* seaborn
+
 
 ## R
 * data.table
