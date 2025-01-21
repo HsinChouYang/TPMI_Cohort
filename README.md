@@ -91,7 +91,7 @@ In this step, we use the allele frequencies and principal component eigenvectors
 
 ## Admixture
 - Reference samples
-To select samples for Admixture analysis, the PC1 values on the X-axis and PC2 values on the Y-axis were divided into thirds from the 2nd to the 98th percentile. This division created a 3x3 grid, resulting in 9 blocks. **![Reference samples](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Population%20structure/Admixture)** were then randomly selected from these 9 blocks.
+To select samples for Admixture analysis, the PC1 values on the X-axis and PC2 values on the Y-axis were divided into thirds from the 2nd to the 98th percentile. This division created a 3x3 grid, resulting in 9 blocks. **![Reference samples](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Population%20structure/Admixture/AdmixtureSample.py)** were then randomly selected from these 9 blocks.
 
 - Run Admixture
 ```
