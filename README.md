@@ -114,5 +114,5 @@ To select samples for Admixture analysis, the PC1 values on the X-axis and PC2 v
 - QC
 - Associaton
 ## post-GWAS
-- Polygenetic risk score
+- Polygenic risk score
 
