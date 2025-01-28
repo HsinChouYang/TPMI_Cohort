@@ -42,16 +42,7 @@ To detect SNPs that may cause batch effects by:
 This analysis helps identify potentially problematic SNPs where batch effects could impact genetic association studies.
 
 - Batch SNP removal
-# Setting Batch Effect SNPs to No-Call
-
-## Purpose
 To maintain data quality by converting genotype calls to no-call status for SNPs that demonstrate potential batch effects.
-
-## Process
-Identified SNPs with significant batch effects are marked as no-call to:
-- Prevent false associations in downstream analyses
-- Minimize technical bias in genetic studies
-- Ensure more reliable genotype data
 
 ## Application
 This process is applied to SNPs that show:
