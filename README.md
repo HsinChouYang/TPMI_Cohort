@@ -35,15 +35,16 @@
 - Batch SNP removal
 ## Required files & format
 - batchID.clst
-```
+
 |FID	    |IID      |Batch   |
 |---------|---------|----------|
 |Sample1	|Sample1	|batch1|
 |Sample2	|Sample2	|batch1|
 |Sample3	|Sample3	|batch2|
 |Sample4	|Sample4	|batch2|
-```
+
 - batchSNPs.zero
+|------------|--------|
 |rs1111	|batch3|
 |rs2222	|batch4|
 |rs2222 	|batch6|
@@ -51,6 +52,7 @@
 |rs3333	|batch2|
 |rs4444	|batch6|
 
+```
 ./plink --bfile tpmi \
 --within batchID.clst \
 --zero-cluster batchSNPs.zero \
