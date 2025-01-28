@@ -31,6 +31,15 @@
 
 # Data Pre-processing
 ## Required files & format
+- batchAAF.tsv
+|CHROM	|POS	|SNPID			|REF	|ALT	|batch1	|batch2	|batch3	|batch4	|batch5	|batch6	|...
+|------------|------------|-------------------------|------------|-------------|------------|------------|-------------|------------|------------|------------|
+|1		|13417	|rs777038595		|-		|GAGA	|0.000808|0		|0		|0		|0		|0		|
+|1		|30794	|Affx-474295932	|G		|A		|0		|0		|0		|0		|0		|0		|
+|1		|46434	|Affx-474295945	|A		|T		|0.000403|0.000239|0		|0		|0		|0		|
+|1		|74636	|rs62641290		|G		|A		|1		|1		|1		|1		|1		|1		|
+|1		|90081	|Affx-474296182	|A		|T		|0		|0		|0		|0		|0		|0		|
+
 - batchID.clst
 
 |FID	    |IID      |Batch   |
@@ -68,6 +77,7 @@ To maintain data quality by converting genotype calls to no-call status for SNPs
 ```
 
 - Relatedness check
+This step in the process focuses on recognizing the degree of kinship relationships, specifically identifying relationships within the third degree of kinship.
 ```
 ./king -b ForKing.bed \
 --cpus 50 \
