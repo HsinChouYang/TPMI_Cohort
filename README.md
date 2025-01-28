@@ -43,14 +43,14 @@
 |Sample3	|Sample3	|batch2|
 |Sample4	|Sample4	|batch2|
 
-- batchSNPs.zero
+- batchSNPs.zero 
 
-|rs1111	|batch3|
-|rs2222	|batch4|
-|rs2222 	|batch6|
-|rs2222	|batch10|
-|rs3333	|batch2|
-|rs4444	|batch6|
+| rs1111	| batch3  |
+| rs2222	| batch4  |
+| rs2222 	| batch6  |
+| rs2222	| batch10|
+| rs3333	| batch2  |
+| rs4444	| batch6  |
 
 ```
 ./plink --bfile tpmi \
