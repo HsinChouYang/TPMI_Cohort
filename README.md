@@ -44,7 +44,8 @@
 |Sample4	|Sample4	|batch2|
 
 - batchSNPs.zero 
-
+|aa           |bb         |
+|------------|----------|
 | rs1111	| batch3  |
 | rs2222	| batch4  |
 | rs2222 	| batch6  |
