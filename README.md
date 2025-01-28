@@ -32,7 +32,32 @@
 # Data Pre-processing
 1. Genetic Data
 - Batch effect detection
+# Purpose
+To detect SNPs that may cause batch effects by:
+1. Analyzing frequency differences between batches for identical SNPs
+2. Cross-referencing these differences with:
+   - Taiwan BioBank data
+   - 1000 Genomes Project data
+
+This analysis helps identify potentially problematic SNPs where batch effects could impact genetic association studies.
+
 - Batch SNP removal
+# Setting Batch Effect SNPs to No-Call
+
+## Purpose
+To maintain data quality by converting genotype calls to no-call status for SNPs that demonstrate potential batch effects.
+
+## Process
+Identified SNPs with significant batch effects are marked as no-call to:
+- Prevent false associations in downstream analyses
+- Minimize technical bias in genetic studies
+- Ensure more reliable genotype data
+
+## Application
+This process is applied to SNPs that show:
+- Significant frequency differences between batches
+- Deviations from expected frequencies based on Taiwan BioBank and 1000 Genomes Project references
+
 ## Required files & format
 - batchID.clst
 
