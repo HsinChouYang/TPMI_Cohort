@@ -95,14 +95,16 @@
 |rs4444|batch6|
 
 - diagnoses.csv
+
 |ID		|ICD10 CODE	|ICD VERSION SOURCE	|ICD CODE SOURCE	|SUSPECTED	|DIAGNOSIS DATE	|SOURCE	|TITLE	|DIVISION|
-|Sample1	|J00			|ICD-10-CM				|J00					|			|2023/11/1			|ªù¶E¬ö¿ý	|¶EÂ_	|®aÂå¬ì|
-|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/6				|ªù¶E¬ö¿ý	|¶EÂ_	|¥Ö½§¬ì|
-|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/13			|ªù¶E¬ö¿ý	|¶EÂ_	|¥Ö½§¬ì|
-|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/4/14			|ªù¶E¬ö¿ý	|¶EÂ_	|¥Ö½§¬ì|
-|Sample1	|E66.9		|ICD-10-CM				|E66.9				|			|2023/1/17			|ªù¶E¬ö¿ý	|¶EÂ_	|­·Àã§K¬Ì¬ì|
-|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/2/21			|ªù¶E¬ö¿ý	|¶EÂ_	|­·Àã§K¬Ì¬ì|
-|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/4/18			|ªù¶E¬ö¿ý	|¶EÂ_	|­·Àã§K¬Ì¬ì|
+|------------|-------------------|--------------------------------------|-------------------------------|-------------------|-------------------------------|-------------------|------------------|---------|
+|Sample1	|J00			|ICD-10-CM				|J00					|			|2023/11/1			|Outpatient	|Diagnosis	|Family Medicine|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/6				|Outpatient	|Diagnosis	|Dermatology|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/13			|Outpatient	|Diagnosis	|Dermatology|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/4/14			|Outpatient	|Diagnosis	|Dermatology|
+|Sample1	|E66.9		|ICD-10-CM				|E66.9				|			|2023/1/17			|Outpatient	|Diagnosis	|Rheumatology|
+|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/2/21			|Outpatient	|Diagnosis	|Rheumatology|
+|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/4/18			|Outpatient	|Diagnosis	|Rheumatology|
 
 ## Genetic Data
 - Batch effect detection   
