@@ -106,6 +106,8 @@
 |Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/2/21			|Outpatient	|Diagnosis	|Rheumatology|
 |Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/4/18			|Outpatient	|Diagnosis	|Rheumatology|
 
+
+
 ## Genetic Data
 - Batch effect detection   
 Detection of potential batch effect SNPs through analysis of between-batch frequency differences and comparison with other databases (Taiwan BioBank and 1000 Genomes Project).
