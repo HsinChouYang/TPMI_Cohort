@@ -94,6 +94,16 @@
 |rs3333|batch2|
 |rs4444|batch6|
 
+- diagnoses.csv
+|ID		|ICD10 CODE	|ICD VERSION SOURCE	|ICD CODE SOURCE	|SUSPECTED	|DIAGNOSIS DATE	|SOURCE	|TITLE	|DIVISION|
+|Sample1	|J00			|ICD-10-CM				|J00					|			|2023/11/1			|ªù¶E¬ö¿ý	|¶EÂ_	|®aÂå¬ì|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/6				|ªù¶E¬ö¿ý	|¶EÂ_	|¥Ö½§¬ì|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/13			|ªù¶E¬ö¿ý	|¶EÂ_	|¥Ö½§¬ì|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/4/14			|ªù¶E¬ö¿ý	|¶EÂ_	|¥Ö½§¬ì|
+|Sample1	|E66.9		|ICD-10-CM				|E66.9				|			|2023/1/17			|ªù¶E¬ö¿ý	|¶EÂ_	|­·Àã§K¬Ì¬ì|
+|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/2/21			|ªù¶E¬ö¿ý	|¶EÂ_	|­·Àã§K¬Ì¬ì|
+|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/4/18			|ªù¶E¬ö¿ý	|¶EÂ_	|­·Àã§K¬Ì¬ì|
+
 ## Genetic Data
 - Batch effect detection   
 Detection of potential batch effect SNPs through analysis of between-batch frequency differences and comparison with other databases (Taiwan BioBank and 1000 Genomes Project).
@@ -121,7 +131,12 @@ This step in the process focuses on recognizing the degree of kinship relationsh
 ```
 ## EMR Data
 - Diagnosis reports
+
+
+
+
 - Laboratory test results
+
 - Vital signs
 
 # Population structure
