@@ -1,12 +1,12 @@
+############################################################################################
+## This program was written to detect SNPs in specific batches of participants with       ##
+## significantly different allele frequencies compared to other batches. Each array       ##
+## (TPMv1/TPMv2) has the corresponding batchAAF.tsv and batchSampleSize.tsv for the work. ##
+############################################################################################
 
-
+## step1: identify SNP candidates with different AFs across batches (using Fisher's exact test)
 rm(list=ls())
 library(future.apply)
-
-tpmi_ver <- "tpmi037"; tpm_ver <- "tpm2"
-
-dir.create(sprintf("/home/jiawei@pandora.sinica/Desktop/TPMI/batchSNP/%s/%s/",tpmi_ver,toupper(tpm_ver)),recursive=T)
-setwd(sprintf("/home/jiawei@pandora.sinica/Desktop/TPMI/batchSNP/%s/%s/",tpmi_ver,toupper(tpm_ver)))
 
 dtin <- read.table("batchAAF.tsv",header=T,sep="\t",stringsAsFactors=FALSE)
 dtin_msng <- read.table("batchSampleSize.tsv",header=T,sep="\t",stringsAsFactors=FALSE)
@@ -65,10 +65,8 @@ if(!all(tmpcheck_m)){
 }
 
 
-
-## plots and tables
+## step2: for each SNP candidate, identifying batches with AFs away from AFs of (1) TPM array (median AF of batches) or (2) TWB(NGS) and EAS(1000 genomes project) datasets
 ## (pos twb2: hg38)
-
 rm(list=ls())
 
 dtin_bfreqtmp <- read.table("batch_freq_Freq.txt",header=T,sep="\t")
@@ -107,7 +105,6 @@ for(i in tmp3){
    dtin_bfreq_i <- dtin_bfreq[i,]
    dtin_bfreq_i[dtin_bfreq_i < 0]=NA
 
-   #dtin_p_i <- -log10(pmax(dtin_p[i,], 4.94066e-324))
    srt_x_i <- factor(1:ncol(dtin_bfreq),levels=order(dtin_bfreq_i))
 
    isambg <- paste(dtin_bfreqtmp[i,4],dtin_bfreqtmp[i,5],sep="_") %in% c("A_T","T_A","C_G","G_C")
@@ -148,4 +145,5 @@ ed3 <- proc.time()
 
 write.table(zcls,"batchSNPs.zero",col.name=F,row.name=F,quote=F,sep="\t")
 write.table(tmp3_id,"ref_batchSNPs.txt",col.name=F,row.name=F,quote=F,sep="\t")
+
 
