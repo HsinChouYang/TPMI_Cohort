@@ -145,11 +145,11 @@ This step in the process focuses on recognizing the degree of kinship relationsh
 ```
 ## EMR Data
 - Diagnosis reports
-For the diagnosis reports, we analyze the most frequent diagnostic codes in the database and calculate the age at first diagnosis.
+For the diagnosis reports, we analyze the most frequent diagnostic codes in the database and calculate the age at first diagnosis.   
 **[Diagnosis.py](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Data%20Pre-processing/EHR%20Data/Diagnosis.py)**
 
 - Laboratory test results
-For laboratory measurements, we calculate the statistical distribution of data volume per patient and follow-up duration.
+For laboratory measurements, we calculate the statistical distribution of data volume per patient and follow-up duration.   
 **[Laboratory.py](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Data%20Pre-processing/EHR%20Data/Laboratory.py)**
 
 # Population structure
