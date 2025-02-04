@@ -202,5 +202,5 @@ To select samples for Admixture analysis, the PC1 values on the X-axis and PC2 v
 **[Associaton](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Application/GWAS/ASSOC)**
 
 ## post-GWAS
-- Polygenic risk score
+- **[Polygenic risk score](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Application/post-GWAS/PRS)**
 
