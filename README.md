@@ -17,6 +17,7 @@
 
 
 ## R
+* future.apply
 * data.table
 * dplyr
 * car
@@ -28,29 +29,104 @@
 1. [1000 Genomes phase 3](https://www.cog-genomics.org/plink/2.0/resources#phase3_1kg)
 2. [PGS Catalog](https://www.pgscatalog.org/downloads/)
 
-# Required files & format
-1. batchID.clst
-```
-FID	IID	Batch
-Sample1	Sample1	batch1
-Sample2	Sample2	batch1
-Sample3	Sample3	batch2
-Sample4	Sample4	batch2
-```
-2. batchSNPs.zero
-```
-rs1111	batch3
-rs2222	batch4
-rs2222 	batch6
-rs2222	batch10
-rs3333	batch2
-rs4444	batch6
-```
+
 # Data Pre-processing
-1. Genetic Data
-- Batch effect detection
-- Batch SNP removal
+## Required files & format
+- batchAAF.tsv
+
+|CHROM	|POS	|SNPID			|REF	|ALT	|batch1	|batch2	|batch3	|batch4	|batch5	|batch6	|...|
+|------------|------------|-------------------------|------------|-------------|------------|------------|-------------|------------|------------|------------|---|
+|1		|13417	|rs777038595		|-		|GAGA	|0.000808|0		|0		|0		|0		|0		|...|
+|1		|30794	|Affx-474295932	|G		|A		|0		|0		|0		|0		|0		|0		|...|
+|1		|46434	|Affx-474295945	|A		|T		|0.000403|0.000239|0		|0		|0		|0		|...|
+|1		|74636	|rs62641290		|G		|A		|1		|1		|1		|1		|1		|1		|...|
+|1		|90081	|Affx-474296182	|A		|T		|0		|0		|0		|0		|0		|0		|...|
+
+- batchSampleSize.tsv
+
+|CHROM	|POS	|SNPID			|REF	|ALT	|batch1	|batch2	|batch3	|batch4	|batch5	|batch6	|...|
+|------------|------------|-------------------------|------------|-------------|------------|------------|-------------|------------|------------|------------|---|
+|1		|13417	|rs777038595		|-		|GAGA	|2474	|2094	|2939	|2389	|3232	|2457	|...|
+|1		|30794	|Affx-474295932	|G		|A		|2480	|2093	|2939	|2389	|3233	|2460	|...|
+|1		|46434	|Affx-474295945	|A		|T		|2481	|2094	|2941	|2387	|3233	|2459	|...|
+|1		|74636	|rs62641290		|G		|A		|2478	|2091	|2939	|2389	|3232	|2450	|...|
+|1		|90081	|Affx-474296182	|A		|T		|2480	|2091	|2936	|2391	|3233	|2457	|...|
+
+- g1k_EAS_unrl.afreq
+
+|CHROM	|POS	|ID			|REF	|ALT	|ALT_FREQS	|OBS_CT|
+|------------|------------|-------------------|------------|-------------|-----------------|------------|
+|1		|10397	|1:10399:C:A	|C		|A		|0.00396825	|1008	|
+|1		|10403	|1:10405:A:AC|A		|AC		|0			|1008	|
+|1		|10420	|1:10420:A:C	|A		|C		|0.000992063	|1008	|
+|1		|10438	|1:10438:A:T	|A		|T		|0.000992063	|1008	|
+|1		|10440	|1:10440:C:A	|C		|A		|0.0119048	|1008	|
+|1		|10444	|1:10444:T:A	|T		|A		|0.00198413	|1008	|
+
+- twb_af.tsv
+
+|Chr		|Pos_start	|Pos_end	|Ref			|Obs		|Freq	|
+|------------|------------|------------|-------------------|-------------|------------|
+|chr10	|10319	|10319	|C			|C		|0.999	|
+|chr10	|10374	|10380	|TTAACCC	|T		|0.0012	|
+|chr10	|10425	|10425	|A			|C		|0.0988	|
+|chr10	|10466	|10466	|G			|C		|0.0015	|
+|chr10	|10501	|10501	|G			|T		|0.014	|
+|chr10	|10505	|10505	|C			|T		|0.005	|
+
+
+- batchID.clst
+
+|FID	    |IID      |Batch   |
+|---------|---------|----------|
+|Sample1	|Sample1	|batch1|
+|Sample2	|Sample2	|batch1|
+|Sample3	|Sample3	|batch2|
+|Sample4	|Sample4	|batch2|
+
+- batchSNPs.zero
+
+|SNP    |batch  |
+|---------|--------|
+|rs1111|batch3|
+|rs2222|batch4|
+|rs2222|batch6|
+|rs2222|batch10|
+|rs3333|batch2|
+|rs4444|batch6|
+
+- diagnoses.csv
+
+|ID		|ICD10 CODE	|ICD VERSION SOURCE	|ICD CODE SOURCE	|SUSPECTED	|DIAGNOSIS DATE	|SOURCE	|TITLE	|DIVISION|
+|------------|-------------------|--------------------------------------|-------------------------------|-------------------|-------------------------------|-------------------|------------------|---------|
+|Sample1	|J00			|ICD-10-CM				|J00					|			|2023/11/1			|Outpatient	|Diagnosis	|Family Medicine|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/6				|Outpatient	|Diagnosis	|Dermatology|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/13			|Outpatient	|Diagnosis	|Dermatology|
+|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/4/14			|Outpatient	|Diagnosis	|Dermatology|
+|Sample1	|E66.9		|ICD-10-CM				|E66.9				|			|2023/1/17			|Outpatient	|Diagnosis	|Rheumatology|
+|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/2/21			|Outpatient	|Diagnosis	|Rheumatology|
+|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/4/18			|Outpatient	|Diagnosis	|Rheumatology|
+
+
+
+## Genetic Data
+- Batch effect detection   
+Detection of potential batch effect SNPs through analysis of between-batch frequency differences and comparison with other databases (Taiwan BioBank and 1000 Genomes Project).
+```
+XX.R
+```
+- Batch SNP removal    
+To maintain data quality by converting genotype calls to no-call status for SNPs that demonstrate potential batch effects.
+```
+./plink --bfile tpmi \
+--within batchID.clst \
+--zero-cluster batchSNPs.zero \
+--make-bed \
+--out tpmi_batchSNP
+```
+
 - Relatedness check
+This step in the process focuses on recognizing the degree of kinship relationships, specifically identifying relationships within the third degree of kinship.
 ```
 ./king -b ForKing.bed \
 --cpus 50 \
@@ -58,9 +134,14 @@ rs4444	batch6
 --degree 3 \
 --prefix TPMI_Relatedness
 ```
-2. EMR Data
+## EMR Data
 - Diagnosis reports
+
+
+
+
 - Laboratory test results
+
 - Vital signs
 
 # Population structure
