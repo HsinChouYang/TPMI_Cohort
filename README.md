@@ -113,7 +113,7 @@
 - Batch effect detection   
 Detection of potential batch effect SNPs through analysis of between-batch frequency differences and comparison with other databases (Taiwan BioBank and 1000 Genomes Project).
 ```
-XX.R
+**[batchSNP.R](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Data%20Pre-processing/Genetic%20Data/batchSNP.R)**
 ```
 - Batch SNP removal    
 To maintain data quality by converting genotype calls to no-call status for SNPs that demonstrate potential batch effects.
