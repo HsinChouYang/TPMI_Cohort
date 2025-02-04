@@ -95,18 +95,27 @@
 |rs3333|batch2|
 |rs4444|batch6|
 
-- diagnoses.csv
+- diagnoses_all.csv
 
-|ID		|ICD10 CODE	|ICD VERSION SOURCE	|ICD CODE SOURCE	|SUSPECTED	|DIAGNOSIS DATE	|SOURCE	|TITLE	|DIVISION|
-|------------|-------------------|--------------------------------------|-------------------------------|-------------------|-------------------------------|-------------------|------------------|---------|
-|Sample1	|J00			|ICD-10-CM				|J00					|			|2023/11/1			|Outpatient	|Diagnosis	|Family Medicine|
-|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/6				|Outpatient	|Diagnosis	|Dermatology|
-|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/1/13			|Outpatient	|Diagnosis	|Dermatology|
-|Sample1	|D23.9		|ICD-10-CM				|D23.9				|			|2023/4/14			|Outpatient	|Diagnosis	|Dermatology|
-|Sample1	|E66.9		|ICD-10-CM				|E66.9				|			|2023/1/17			|Outpatient	|Diagnosis	|Rheumatology|
-|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/2/21			|Outpatient	|Diagnosis	|Rheumatology|
-|Sample2	|E66.9		|ICD-10-CM				|E66.9				|			|2023/4/18			|Outpatient	|Diagnosis	|Rheumatology|
+|ID		|ICD10 CODE	|DIAGNOSIS DATE	|SOURCE	|DIVISION|
+|------------|-------------------|---------------------------|------------|-------------------|
+|Sample1	|J00			|2023/11/1		|Outpatient	|Family Medicine|
+|Sample1	|D23.9		|2023/1/6		|Outpatient	|Dermatology|
+|Sample1	|D23.9		|2023/1/13		|Outpatient	|Dermatology|
+|Sample1	|D23.9		|2023/4/14		|Outpatient	|Dermatology|
+|Sample1	|E66.9		|2023/1/17		|Outpatient	|Rheumatology|
+|Sample2	|E66.9		|2023/2/21		|Outpatient	|Rheumatology|
+|Sample2	|E66.9		|2023/4/18		|Outpatient	|Rheumatology|
 
+- lab_tests.csv
+
+|ID		|Sampling Date	|HB	|HB_UNIT |HB_REF |HB_SPECIMEN_TYPE |HBA1C |HBA1C_UNIT |HBA1C_REF |HBA1C_SPECIMEN_TYPE |...|
+|------------|-------------------|-------|-------------|-------------|------------------------------|----------|--------------------|------------------|-------------------|------|
+|Sample1	|2023-03-24	|13.8	 |g/dL        |12.0-16.0   |Blood 			     |6.2	  |%			    |4.0-6.0 	  |Blood  |...|
+|Sample1	|2023-04-06	|	 |g/dL        |12.0-16.0   |Blood 			     |6.3	  |%     		    |4.0-6.0 	  |Blood  |...|
+|Sample1	|2023-04-25	|15.1	 |g/dL        |12.0-16.0   |Blood 			     |6.8	  |%    		    |4.0-6.0 	  |Blood  |...|
+|Sample2	|2021-01-21	|14.2	 |g/dL        |12.0-16.0   |Blood 			     |4.5	  |%   	            |4.0-6.0 	  |Blood  |...|
+|Sample2	|2022-06-29	|14.8	 |g/dL        |12.0-16.0   |Blood 			     |		  |%   		    |4.0-6.0 	  |Blood  |...|
 
 
 ## Genetic Data
