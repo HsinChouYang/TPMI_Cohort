@@ -23,7 +23,7 @@ SampleRecordsDF=SampleDF.copy()
 SampleTrackYearsDF=SampleDF.copy()
 
 # (2) Load Lab results
-Files=glob(f"/RawData/*")
+Files=glob(f"/rawData/*")
 LabDF=LabFiles(Files)
 LabDF.rename(columns={'ID':'MID'},inplace=True)
 
