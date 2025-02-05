@@ -155,7 +155,7 @@ For laboratory measurements, we calculate the statistical distribution of data v
 # Population structure
 ## Principal Component Analysis(PCA)
 - step1 : SNP pruning  
-In this step, we aim to generate a pruned subset of variants for PCA. The command excludes the long-range linkage disequilibrium (LRLD) regions specified in LRLD.txt and performs an independent pairwise pruning with a window size of 5000kb, step size of 1, and a linkage disequilibrium (LD) threshold of 0.2.
+In this step, we aim to generate a pruned subset of variants for PCA. The command excludes the long-range linkage disequilibrium (LRLD) regions specified in **[LRLD.txt](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Data%20Pre-processing/Genetic%20Data/LRLD.txt)** and performs an independent pairwise pruning with a window size of 5000kb, step size of 1, and a linkage disequilibrium (LD) threshold of 0.2.
 
 ```
 ./plink2 --bfile tpmi \
