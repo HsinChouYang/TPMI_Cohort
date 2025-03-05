@@ -23,7 +23,7 @@ In this step, we conduct the association test for independent QC sample dataset 
 ```
 
 ## Association test for related sample dataset
-In this step, we conduct the association test for the related QC sample dataset by SAIGE
+In this step, we conduct the association test for the related QC sample dataset by REGENIE/SAIGE
 ```
 ./ASSOC_sampleRel.sh ./QC/e11/tpmi_qcSampRel_qcVar phecov.txt e11 b
 ./ASSOC_sampleRel.sh ./QC/hba1c/tpmi_qcSampRel_qcVar phecov.txt hba1c q
