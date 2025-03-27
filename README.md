@@ -4,6 +4,7 @@
 * [PLINK2](https://www.cog-genomics.org/plink/2.0/)
 * [KING](https://www.kingrelatedness.com/)
 * [ADMIXTURE](https://dalexander.github.io/admixture/)
+* [REGENIE](https://github.com/rgcgithub/regenie)
 * [SAIGE](https://github.com/saigegit/SAIGE)
 * [PRS-CSx](https://github.com/getian107/PRScsx)
 

@@ -40,13 +40,72 @@ for phe in hba1c sbp dbp; do
 	       --out assoc_sampInd_${phe}_resInv
 done
 
-
 ## related samples
 for phe in e11 i10 hba1c sbp dbp; do
 	plink2 --bfile ${fpath_geno_r} --export bgen-1.2 bits=8 --out ${fpath_geno_r}
 	awk 'NR>2' ${fpath_geno_r}.sample > tmp && mv tmp ${fpath_geno_r}.sample
 done
 
+# REGENIE
+for phe in e11 i10 hba1c sbp dbp; do
+	if [[ ${phe} =~ ^(e11|i10)$ ]]; then # binary
+		# step 1
+		./regenie \
+		--step 1 \
+		--bed ${fpath_geno_r} \
+		--phenoFile ${fpath_phecov} \
+		--phenoCol ${phe} \
+		--covarFile ${fpath_phecov} \
+		--covarColList age,sex,bmi,PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10 \
+		--bsize 100 \
+		--bt \
+		--out assoc_sampRel_${phe}.regenie.step1
+
+		# step 2
+		./regenie \
+		--step 2 \
+		--bgen ${fpath_geno_r}.bgen \
+		--phenoFile ${fpath_phecov} \
+		--phenoCol ${phe} \
+		--covarFile ${fpath_phecov} \
+		--covarColList age,sex,bmi,PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10 \
+		--bsize 200 \
+		--bt \
+		--firth --approx \
+		--pThresh 0.01 \
+		--pred assoc_sampRel_${phe}.regenie.step1_pred.list \
+		--out assoc_sampRel_${phe}.regenie.step2
+	else # quantitative
+		# step 1
+		./regenie \
+		--step 1 \
+		--bed ${fpath_geno_r} \
+		--phenoFile ${fpath_phecov} \
+		--phenoCol ${phe} \
+		--covarFile ${fpath_phecov} \
+		--covarColList age,sex,bmi,PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10 \
+		--bsize 100 \
+		--qt --apply-rint \
+		--out assoc_sampRel_${phe}.regenie.step1
+
+		# step 2
+		./regenie \
+		--step 2 \
+		--bgen ${fpath_geno_r}.bgen \
+		--phenoFile ${fpath_phecov} \
+		--phenoCol ${phe} \
+		--covarFile ${fpath_phecov} \
+		--covarColList age,sex,bmi,PC1,PC2,PC3,PC4,PC5,PC6,PC7,PC8,PC9,PC10 \
+		--bsize 200 \
+		--qt \
+		--apply-rint \
+		--pThresh 0.01 \
+		--pred assoc_sampRel_${phe}.regenie.step1_pred.list \
+		--out assoc_sampRel_${phe}.regenie.step2
+	fi
+done
+
+# SAIGE
 for phe in e11 i10 hba1c sbp dbp; do
 	if [[ ${phe} =~ ^(e11|i10)$ ]]; then # binary
 		ptype=binary
