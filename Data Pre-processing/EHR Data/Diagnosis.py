@@ -25,7 +25,7 @@ DiagDF=LoadAllDiagnosis()
 ## Remove records with missing ICD-10 fields 
 print("-> remove missing in ICD10 field")
 DiagDF.dropna(subset=['ICD10'],inplace=True)
-DiagDF['ICD code']=df['ICD10'].apply(lambda x : x.split('.')[0])
+DiagDF['ICD code']=DiagDF['ICD10'].apply(lambda x : x.split('.')[0])
 ## Count the occurrences of each ICD-10 code by patient
 VisitCountDF=pd.crosstab(DiagDF['ID'],DiagDF['ICD code'])
 VisitDF=VisitCountDF.copy()
@@ -41,7 +41,7 @@ TopSampleSizeDF=SampleSizeDF.head(TopN).copy()
 
 # (3) Load sample list and associated metadata
 usecols=['MID','Birth','Age','Gender_EMR']
-SampleInfoFile=f'{WorkPath}/SampleInfo/{DBver}_T1_SampleInfo_486956.tsv'
+SampleInfoFile=f'{WorkPath}/SampleInfo/TpmiSample.tsv'
 SampleDF=pd.read_csv(SampleInfoFile,sep='\t',usecols=usecols)
 print(f"Number of samples : {SampleDF.shape[0]}")
 BirthDict=dict((u,v) for u,v in zip(SampleDF['MID'],SampleDF['Birth']))
@@ -65,7 +65,7 @@ TopSampleSizeDF.reset_index(inplace=True)
 # (5) Onset Age
 TopDiagDF=DiagDF[DiagDF['ICD code'].isin(TopICD10)]
 TopDiagDF['BIRTH']=TopDiagDF['ID'].apply(lambda x : BirthDict.get(x))
-TopDiagDF['OnsetAge']=((pd.to_datetime(Top20DiagDF['diag'],format="%Y%m")-pd.to_datetime(TopDiagDF['BIRTH'],format="%Y%m"))/365).astype('timedelta64[D]')
+TopDiagDF['OnsetAge']=((pd.to_datetime(TopDiagDF['diag'],format="%Y%m")-pd.to_datetime(TopDiagDF['BIRTH'],format="%Y%m"))/365).astype('timedelta64[D]')
 
 for i in range(len(TopICD10)):
     tempdf=TopDiagDF[TopDiagDF['ICD code']==TopICD10[i]]
