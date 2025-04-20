@@ -1,0 +1,21 @@
+ID,ICD10 CODE,DIAGNOSIS DATE,SOURCE,DIVISION
+Sample1,J00,2023/11/1,Outpatient,Family Medicine
+Sample1,D23.9,2023/1/6,Outpatient,Dermatology
+Sample1,D23.9,2023/1/13,Outpatient,Dermatology
+Sample1,D21.2,2023/4/14,Outpatient,Dermatology
+Sample1,E66.9,2023/1/17,Outpatient,Rheumatology
+Sample2,E66.9,2023/2/21,Outpatient,Rheumatology
+Sample3,C01.1,2021/4/18,Outpatient,Family Medicine
+Sample4,E66.9,2013/5/21,Outpatient,Dermatology
+Sample5,D02.2,2021/1/8,Outpatient,Rheumatology
+Sample5,K10,2022/6/4,Outpatient,Rheumatology
+Sample11,J00,2023/11/1,Outpatient,Family Medicine
+Sample12,D23.9,2023/1/6,Outpatient,Dermatology
+Sample13,D23.9,2023/1/13,Outpatient,Dermatology
+Sample4,D21.2,2023/4/14,Outpatient,Dermatology
+Sample15,E66.9,2023/1/17,Outpatient,Rheumatology
+Sample21,E66.9,2023/2/21,Outpatient,Rheumatology
+Sample31,C01.1,2021/4/18,Outpatient,Family Medicine
+Sample31,E66.9,2013/5/21,Outpatient,Dermatology
+Sample12,D02.2,2021/1/8,Outpatient,Rheumatology
+Sample15,K10,2022/6/4,Outpatient,Rheumatology
