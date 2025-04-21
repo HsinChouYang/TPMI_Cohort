@@ -65,7 +65,8 @@ TopSampleSizeDF.reset_index(inplace=True)
 # (5) Onset Age
 TopDiagDF=DiagDF[DiagDF['ICD code'].isin(TopICD10)]
 TopDiagDF['BIRTH']=TopDiagDF['ID'].apply(lambda x : BirthDict.get(x))
-TopDiagDF['OnsetAge']=((pd.to_datetime(TopDiagDF['diag'],format="%Y%m")-pd.to_datetime(TopDiagDF['BIRTH'],format="%Y%m"))/365).astype('timedelta64[D]')
+TopDiagDF['BIRTH'] = TopDiagDF['BIRTH'].apply(lambda x: pd.to_datetime(str(x), format="%Y%m"))
+TopDiagDF['OnsetAge'] = (pd.to_datetime(TopDiagDF['diag'], format="%Y%m") - TopDiagDF['BIRTH']).dt.days / 365.25
 
 for i in range(len(TopICD10)):
     tempdf=TopDiagDF[TopDiagDF['ICD code']==TopICD10[i]]
