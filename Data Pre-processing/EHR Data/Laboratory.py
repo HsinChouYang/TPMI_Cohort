@@ -17,7 +17,7 @@ def LabFiles(AllFiles):
 
 
 # (1) Load sample info
-SampleInfoFile=f'TpmiSample.tsv'
+SampleInfoFile=f'Sample.tsv'
 SampleDF=pd.read_csv(SampleInfoFile,sep='\t')
 SampleRecordsDF=SampleDF.copy()
 SampleTrackYearsDF=SampleDF.copy()
