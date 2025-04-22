@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 
 def LabFiles(AllFiles):
     infiles=[z for z in AllFiles if 'lab_tests' in z]
-    print(blue_code+f'\n... {len(infiles)} lab test files found ...'+reset_code)
+    print(f'\n... {len(infiles)} lab test files found ...')
     print(f" ---> {infiles}")
     indf=pd.concat([pd.read_csv(f,encoding="utf-8-sig",parse_dates=['Sampling Date'],low_memory=False) for f in infiles])
-    print(red_code+f"\nNumber of original records : {indf.shape[0]}")
+    print(f"\nNumber of original records : {indf.shape[0]}")
     print(f"Number of samples : {len(indf['ID'].unique())}")
     return indf
 
