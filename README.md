@@ -205,11 +205,11 @@ shapeit --input-bed ${MyFile}.bed ${MyFile}.bim ${MyFile}.fam \
 ```
 - step 2 : Convert to ChromoPainter's PHASE and RECOMBFILES files
 ```
-perl impute2chromopainter.pl -J ${InFile} ${OutFile}
+perl impute2chromopainter.pl -J ${infile} ${outfile}
 ```
 - step 3 : Create recombination rate map file
 ```
-perl makeuniformrecfile.pl -J ${InFile} ${OutFile}
+perl makeuniformrecfile.pl -J ${infile} ${outfile}
 ```
 - step 4 : Computational stage
 ```
