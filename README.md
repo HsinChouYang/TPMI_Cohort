@@ -9,6 +9,8 @@
 * [SAIGE](https://github.com/saigegit/SAIGE)
 * [ANNOVAR](https://annovar.openbioinformatics.org/en/latest/)
 * [PRS-CSx](https://github.com/getian107/PRScsx)
+* [fineSTRUCTURE v2 & GLOBETROTTER](https://people.maths.bris.ac.uk/~madjl/finestructure/index.html)
+* [admixtools 2](https://uqrmaie1.github.io/admixtools/articles/recipes.html)
 
 # Packages
 ## Python
@@ -28,6 +30,8 @@
 * sp
 * pROC
 * RColorBrewer
+* admixtools
+* tidyverse
 
 # Download data
 1. [1000 Genomes phase 3](https://www.cog-genomics.org/plink/2.0/resources#phase3_1kg)
