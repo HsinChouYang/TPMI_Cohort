@@ -219,7 +219,7 @@ perl makeuniformrecfile.pl ${infile} ${outfile}
                                     -s1minsnps 5000 -s3iters 10000 -s4iters 10000 -go
 ```
 ## AdmixTools
-**[code](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Population%20structure/AdmixTools/ADMIXTOOLS_code.r)**
+**[ADMIXTOOLS_code.r](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Population%20structure/AdmixTools/ADMIXTOOLS_code.r)**
 
 # Application
 ## GWAS   
