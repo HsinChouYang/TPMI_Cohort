@@ -213,7 +213,10 @@ perl makeuniformrecfile.pl -J ${InFile} ${OutFile}
 ```
 - step 4 : Computational stage
 ```
-./fs_linux_glibc2.3 ${cpfile}.cp -n -phasefiles ${phasefile} -recombfiles ${recombfile} -idfile ${idsfile} -s1minsnps 5000 -s3iters 10000 -s4iters 10000 -go
+./fs_linux_glibc2.3 ${cpfile}.cp -n -phasefiles ${phasefile} \
+                                    -recombfiles ${recombfile} \
+                                    -idfile ${idsfile} \
+                                    -s1minsnps 5000 -s3iters 10000 -s4iters 10000 -go
 ```
 
 # Application
