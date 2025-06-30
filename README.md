@@ -209,7 +209,7 @@ perl impute2chromopainter.pl -J ${infile} ${outfile}
 ```
 - step 3 : Create recombination rate map file
 ```
-perl makeuniformrecfile.pl -J ${infile} ${outfile}
+perl makeuniformrecfile.pl ${infile} ${outfile}
 ```
 - step 4 : Computational stage
 ```
