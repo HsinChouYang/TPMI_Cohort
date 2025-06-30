@@ -199,9 +199,9 @@ To select samples for Admixture analysis, the PC1 values on the X-axis and PC2 v
 ## ChromoPainter & fineSTRUCTURE
 -  step1 : Estimation of haplotypes (phasing)
 ```
-shapeit --input-bed ${MyFile}.bed ${MyFile}.bim ${MyFile}.fam \
+shapeit --input-bed ${infile}.bed ${infile}.bim ${infile}.fam \
         -M ${GeneticMap}/chr${chr}.b38.gmap \
-        -O ${OutFile}.phased
+        -O ${outfile}.phased
 ```
 - step 2 : Convert to ChromoPainter's PHASE and RECOMBFILES files
 ```
