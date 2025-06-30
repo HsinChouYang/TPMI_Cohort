@@ -228,10 +228,14 @@ perl makeuniformrecfile.pl ${infile} ${outfile}
 **[ADMIXTOOLS_code.r](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Population%20structure/AdmixTools/ADMIXTOOLS_code.r)**
 
 # Application
+## Cross-cohort comparison
+- **[AF_Comp](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Application/Cross-cohort_Comp/AF_Comp)**   
+
 ## GWAS   
 - **[QC](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Application/GWAS/QC)**   
 - **[Associaton](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Application/GWAS/ASSOC)**
 
 ## post-GWAS
+- **[Functional annotation](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Application/post-GWAS/FunAnno)**
 - **[Polygenic risk score](https://github.com/Jenn-Hwai/TPMI_Cohort/tree/main/Application/post-GWAS/PRS)**
 
