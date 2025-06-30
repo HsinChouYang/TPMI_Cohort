@@ -30,6 +30,8 @@
 * sp
 * pROC
 * RColorBrewer
+* admixtools
+* tidyverse
 
 # Download data
 1. [1000 Genomes phase 3](https://www.cog-genomics.org/plink/2.0/resources#phase3_1kg)
