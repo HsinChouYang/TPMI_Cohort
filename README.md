@@ -196,6 +196,25 @@ To select samples for Admixture analysis, the PC1 values on the X-axis and PC2 v
 ```
 ./admixture -P ForProjection.bed 10 -j10
 ```
+## ChromoPainter & fineSTRUCTURE
+-  step1 : Estimation of haplotypes (phasing)
+```
+shapeit --input-bed ${MyFile}.bed ${MyFile}.bim ${MyFile}.fam \
+        -M ${GeneticMap}/chr${chr}.b38.gmap \
+        -O ${OutFile}.phased
+```
+- step 2 : Convert to ChromoPainter's PHASE and RECOMBFILES files
+```
+perl impute2chromopainter.pl -J ${InFile} ${OutFile}
+```
+- step 3 : Create recombination rate map file
+```
+perl makeuniformrecfile.pl -J ${InFile} ${OutFile}
+```
+- step 4 : Computational stage
+```
+./fs_linux_glibc2.3 ${cpfile}.cp -n -phasefiles ${phasefile} -recombfiles ${recombfile} -idfile ${idsfile} -s1minsnps 5000 -s3iters 10000 -s4iters 10000 -go
+```
 
 # Application
 ## GWAS   
